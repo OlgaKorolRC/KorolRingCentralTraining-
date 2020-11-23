@@ -15,26 +15,25 @@ public class Task2_3 {
         int[] forPositiveValues = new int[7];
         int[] forNegativeValues = new int[7];
         int[] forSumValues = new int[7];
-        int newValue = 0;
+        int newValue;
         int i = 0;
         int j = 0;
+        boolean fullFlag = (i < forPositiveValues.length) && (j < forNegativeValues.length);
         do {
             newValue = new Random().nextInt();
-            if (newValue > 0) {
+            if (newValue > 0 && i < forPositiveValues.length) {
                 forPositiveValues[i] = newValue;
                 i++;
-            } else {
-            }
-        } while (i < forPositiveValues.length);
-
-        do {
-            newValue = new Random().nextInt();
-            if (newValue < 0) {
+                System.out.println("text about i" + i);
+            } else if (newValue < 0 && j < forNegativeValues.length) {
                 forNegativeValues[j] = newValue;
                 j++;
-            } else {
+                System.out.println("text about j" + j);
             }
-        } while (j < forNegativeValues.length);
+            //boolean fullFlag = i < forPositiveValues.length & j < forNegativeValues.length;
+            System.out.println("full flag " + fullFlag);
+        } while ((i + j) < (forPositiveValues.length + forNegativeValues.length));
+
         for (int k = 0; k < forSumValues.length; k++) {
             forSumValues[k] = forPositiveValues[k] + forNegativeValues[k];
         }
