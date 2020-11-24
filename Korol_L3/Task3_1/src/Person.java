@@ -17,9 +17,9 @@ import java.util.Random;
 public class Person {
     String firstName;
     String lastName;
-    Person (String nickname, String surname) {
-        firstName = nickname;
-        lastName = surname;
+    Person (firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public String getFirstName() {

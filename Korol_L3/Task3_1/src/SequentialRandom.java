@@ -28,7 +28,7 @@ public class SequentialRandom {
     }
     SequentialRandom () {
         if (field == 0) {
-            field = new Random().nextInt();
+            field = new Random(1).nextInt();
         } else {
             field++;
         }
