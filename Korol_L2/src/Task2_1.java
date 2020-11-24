@@ -19,17 +19,15 @@ public class Task2_1 {
             forTenValues[i] = new Random().nextInt();
             sum = sum + forTenValues[i];
         }
-        int minValue = forTenValues[0];
         int indexMinValue = 0;
         for (int i = 1; i < forTenValues.length; i++) {
-            if (minValue > forTenValues[i]) {
-                minValue = forTenValues[i];
+            if (forTenValues[indexMinValue] > forTenValues[i]) {
                 indexMinValue = i;
-            } else ;
+            }
         }
 
         System.out.println("All values:" + Arrays.toString(forTenValues));
-        System.out.println("Sum: " + (sum));
-        System.out.println("Min [" + (indexMinValue) + "]: " + (minValue));
+        System.out.println("Sum: " + sum);
+        System.out.println("Min [" + indexMinValue + "]: " + forTenValues[indexMinValue]);
     }
 }
