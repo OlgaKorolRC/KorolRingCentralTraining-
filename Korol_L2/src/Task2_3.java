@@ -18,7 +18,6 @@ public class Task2_3 {
         int newValue;
         int i = 0;
         int j = 0;
-        boolean fullFlag = (i < forPositiveValues.length) && (j < forNegativeValues.length);
         do {
             newValue = new Random().nextInt();
             if (newValue > 0 && i < forPositiveValues.length) {
@@ -30,8 +29,6 @@ public class Task2_3 {
                 j++;
                 System.out.println("text about j" + j);
             }
-            //boolean fullFlag = i < forPositiveValues.length & j < forNegativeValues.length;
-            System.out.println("full flag " + fullFlag);
         } while ((i + j) < (forPositiveValues.length + forNegativeValues.length));
 
         for (int k = 0; k < forSumValues.length; k++) {
