@@ -1,0 +1,10 @@
+# Default ignored files
+/Task4/*
+/Korol_L1/*
+!Korol_L1/src/
+/Korol_L2/*
+!Korol_L2/src/
+/Korol_L3/*
+!Korol_L3/src/
+/Korol_T5/*
+!Korol_T5/src/
