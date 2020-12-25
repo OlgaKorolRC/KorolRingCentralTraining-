@@ -52,7 +52,7 @@ public class MainClass {
         }
         System.out.println("First int array" + Arrays.toString(arrayNumbers.toArray()));
 
-        for (int i = 0; i < valueInArray; i++) {
+        for (int i = 0; i < arrayNumbers.size(); i++) {
             int newValue = arrayNumbers.get(i);
             if (newValue % 2 == 0) {
                 arrayNumbers.remove(newValue);
