@@ -1,19 +1,19 @@
 import java.util.Random;
 
 public class User {
-    int taxID;
-    String company;
-    String firstName;
-    String lastName;
-    String address1;
-    int address2;
-    int postcode;
-    String city;
-    String country;
-    int zone;
-    String email;
-    String phone;
-    String password;
+    private int taxID;
+    private String company;
+    private String firstName;
+    private String lastName;
+    private String address1;
+    private int address2;
+    private int postcode;
+    private String city;
+    private String country;
+    private  int zone;
+    private String email;
+    private String phone;
+    private String password;
 
     User() {
         taxID = new Random().nextInt(100);
@@ -30,6 +30,46 @@ public class User {
         phone = "+1".concat(generateNumber());
         password = generateString(10).concat("passwd");
     }
+
+    public int getTaxID() {
+        return taxID;
+    }
+    public String getCompany() {
+        return company;
+    };
+    public String getFirstName() {
+        return company;
+    };
+    public String getLastName() {
+        return company;
+    };
+    public String getAddress1() {
+        return address1;
+    };
+    public int getAddress2() {
+        return address2;
+    };
+    public int getPostcode() {
+        return postcode;
+    };
+    public String getCity() {
+        return city;
+    };
+    public String getCountry() {
+        return country;
+    };
+    public int getZone() {
+        return zone;
+    };
+    public String getEmail() {
+        return email;
+    };
+    public String getPhone() {
+        return phone;
+    };
+    public String getPassword() {
+        return password;
+    };
 
     private static final String ALPHABET = "AaBbCcDdEeFfGgHhIiJjKkLlmNnOoPpQqRrSsTtUuVvvWwXxYyZz";
     private static final String NUMBERS = "0123456789";

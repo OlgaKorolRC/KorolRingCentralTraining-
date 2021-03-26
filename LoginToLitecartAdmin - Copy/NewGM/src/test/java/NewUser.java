@@ -30,6 +30,7 @@ public class NewUser {
         }
     }
 
+
     @Test
     public void checkNewUser() throws InterruptedException {
         User user = new User();
@@ -45,30 +46,30 @@ public class NewUser {
     }
 
     public void enterValues(User currentUser) throws InterruptedException {
-        driver.findElement(By.name("tax_id")).sendKeys(Integer.toString(currentUser.taxID));
-        driver.findElement(By.name("company")).sendKeys(currentUser.company);
-        driver.findElement(By.name("firstname")).sendKeys(currentUser.firstName);
-        driver.findElement(By.name("lastname")).sendKeys(currentUser.lastName);
-        driver.findElement(By.name("address1")).sendKeys(currentUser.address1);
-        driver.findElement(By.name("address2")).sendKeys(Integer.toString(currentUser.address2));
-        driver.findElement(By.name("postcode")).sendKeys(Integer.toString(currentUser.postcode));
-        driver.findElement(By.name("city")).sendKeys(currentUser.city);
+        driver.findElement(By.name("tax_id")).sendKeys(Integer.toString(currentUser.getTaxID()));
+        driver.findElement(By.name("company")).sendKeys(currentUser.getCompany());
+        driver.findElement(By.name("firstname")).sendKeys(currentUser.getFirstName());
+        driver.findElement(By.name("lastname")).sendKeys(currentUser.getLastName());
+        driver.findElement(By.name("address1")).sendKeys(currentUser.getAddress1());
+        driver.findElement(By.name("address2")).sendKeys(Integer.toString(currentUser.getAddress2()));
+        driver.findElement(By.name("postcode")).sendKeys(Integer.toString(currentUser.getPostcode()));
+        driver.findElement(By.name("city")).sendKeys(currentUser.getCity());
         driver.findElement(By.xpath("//span[@class='select2-selection__rendered']")).click();
-        driver.findElement(By.xpath("//li[text()='United States']")).click();
+        driver.findElement(By.xpath("//li[text()='" + currentUser.getCountry() + "']")).click();
         Select zone = new Select(driver.findElement(By.xpath("//select[@name='zone_code']")));
-        zone.selectByIndex(currentUser.zone);
-        driver.findElement(By.name("email")).sendKeys(currentUser.email);
-        driver.findElement(By.name("phone")).sendKeys(currentUser.phone);
-        driver.findElement(By.name("password")).sendKeys(currentUser.password);
-        driver.findElement(By.name("confirmed_password")).sendKeys(currentUser.password);
+        zone.selectByIndex(currentUser.getZone());
+        driver.findElement(By.name("email")).sendKeys(currentUser.getEmail());
+        driver.findElement(By.name("phone")).sendKeys(currentUser.getPhone());
+        driver.findElement(By.name("password")).sendKeys(currentUser.getPassword());
+        driver.findElement(By.name("confirmed_password")).sendKeys(currentUser.getPassword());
 
     }
 
     public void loginAgain(User currentUser) {
         driver.findElement(By.name("email")).clear();
-        driver.findElement(By.name("email")).sendKeys(currentUser.email);
+        driver.findElement(By.name("email")).sendKeys(currentUser.getEmail());
         driver.findElement(By.name("password")).clear();
-        driver.findElement(By.name("password")).sendKeys(currentUser.password);
+        driver.findElement(By.name("password")).sendKeys(currentUser.getPassword());
         driver.findElement(By.name("login")).click();
     }
 }
